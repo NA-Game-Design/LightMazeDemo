@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0sk34aa0qvcr"]
+[gd_scene load_steps=8 format=3 uid="uid://d0sk34aa0qvcr"]
 
-[ext_resource type="Script" path="res://mainB.gd" id="1_8447c"]
+[ext_resource type="Script" path="res://main.gd" id="1_8447c"]
 [ext_resource type="TileSet" uid="uid://dlr6oy17oulh8" path="res://new_tile_set.tres" id="1_eo5vs"]
 [ext_resource type="PackedScene" uid="uid://i1fxxl35tlbj" path="res://player.tscn" id="2_cojlt"]
 [ext_resource type="Texture2D" uid="uid://bt4msbj7okuyb" path="res://DoorAndKey.png" id="3_41weq"]
+[ext_resource type="Texture2D" uid="uid://xgr43v228xjl" path="res://LightMask.png" id="5_b5w6m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x5v18"]
 
@@ -12,6 +13,9 @@ size = Vector2(20, 12)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_8447c")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -53.0
@@ -28,9 +32,6 @@ layer_0/tile_data = PackedInt32Array(0, 65536, 0, 65536, 65536, 0, 1, 65536, 0, 
 [node name="Player" parent="." instance=ExtResource("2_cojlt")]
 position = Vector2(48, 48)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.288518, 0.288518, 0.288518, 1)
-
 [node name="Door" type="Area2D" parent="."]
 position = Vector2(1104, 84)
 
@@ -43,6 +44,9 @@ texture = ExtResource("3_41weq")
 region_enabled = true
 region_rect = Rect2(24, 0, 24, 24)
 
+[node name="PointLight2D" type="PointLight2D" parent="Door"]
+texture = ExtResource("5_b5w6m")
+
 [node name="Key" type="Area2D" parent="."]
 position = Vector2(432, 592)
 
@@ -54,6 +58,9 @@ texture_filter = 1
 texture = ExtResource("3_41weq")
 region_enabled = true
 region_rect = Rect2(0, 0, 24, 24)
+
+[node name="PointLight2D" type="PointLight2D" parent="Key"]
+texture = ExtResource("5_b5w6m")
 
 [node name="Popup" type="AcceptDialog" parent="."]
 process_mode = 3
