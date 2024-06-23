@@ -18,7 +18,7 @@ offset_left = -53.0
 offset_top = -52.0
 offset_right = 1326.0
 offset_bottom = 772.0
-color = Color(0.292553, 0.0505246, 0.0897067, 1)
+color = Color(0.0816135, 0.123376, 0.356352, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_eo5vs")
