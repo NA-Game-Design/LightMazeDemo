@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://i1fxxl35tlbj"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_flm8w"]
+[ext_resource type="Texture2D" uid="uid://csxyjqmrh65jq" path="res://ColorBlocks.png" id="1_h2s6u"]
+[ext_resource type="Texture2D" uid="uid://xgr43v228xjl" path="res://LightMask.png" id="2_a7e6r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfj8b"]
+size = Vector2(24, 24)
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_flm8w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dfj8b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_h2s6u")
+region_enabled = true
+region_rect = Rect2(0, 0, 24, 24)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+shadow_enabled = true
+texture = ExtResource("2_a7e6r")
+texture_scale = 10.0
