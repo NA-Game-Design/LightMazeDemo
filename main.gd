@@ -5,6 +5,7 @@ var has_key = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$CanvasModulate.visible = true
 	var empty_cells = tilemap.get_used_cells_by_id(-1, -1, Vector2i(5, 0))
 	empty_cells.shuffle()  # Randomly shuffle them
 	var cell_size = tilemap.tile_set.tile_size
