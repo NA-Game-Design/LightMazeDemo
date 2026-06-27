@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var tilemap = $TileMap
+@onready var tilemap = $TileMapLayer
 var has_key = false
 
 # Called when the node enters the scene tree for the first time.
